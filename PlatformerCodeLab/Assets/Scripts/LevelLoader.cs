@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour
 
         for(int i = 0; i < level.Length; i++)
         {
-            MakeRow(level[i], -1);
+            MakeRow(level[i], -i);
         }
 
     }
@@ -43,6 +43,11 @@ public class LevelLoader : MonoBehaviour
             {
                 GameObject brick = Instantiate(Resources.Load("Cube")) as GameObject;
                 brick.transform.position = new Vector3(x * brick.transform.localScale.x + xOffset, y * brick.transform.localScale.y + yOffset, 0);
+            }
+            else if(c == 'O')
+            {
+                GameObject capsule = Instantiate(Resources.Load("Capsule")) as GameObject;
+                capsule.transform.position = new Vector3(x * capsule.transform.localScale.x + xOffset, y * capsule.transform.localScale.y + yOffset, 0);
             }
         }
     }

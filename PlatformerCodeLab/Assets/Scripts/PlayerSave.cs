@@ -14,7 +14,7 @@ public class PlayerSave : MonoBehaviour
         string newPos = reader.ReadLine();
         reader.Close();
         
-        string[] pos = newPos.Split(new char[] {delimiter});
+        string[] pos = newPos.Split(new char[] { delimiter });
         transform.position = new Vector3(float.Parse(pos[0]), float.Parse(pos[1]), float.Parse(pos[2]));
     }
 
